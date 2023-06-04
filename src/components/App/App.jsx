@@ -6,19 +6,9 @@ import { Statistics } from '../Statistics/Statistics';
 import { Notification } from '../Notification/Notification';
 
 export const App = () => {
-  // state = {
-  //   good: 0,
-  //   neutral: 0,
-  //   bad: 0,
-  // };
-
   const [good, setGood] = useState(0);
   const [neutral, setNeutral] = useState(0);
   const [bad, setBad] = useState(0);
-
-  // onLeaveFeedback = state => {
-  //   this.setState(prevState => ({ [state]: prevState[state] + 1 }));
-  // };
 
   const onLeaveFeedback = state => {
     switch (state) {
@@ -40,7 +30,6 @@ export const App = () => {
   };
 
   const countTotalFeedback = () => {
-    // const { good, neutral, bad } = this.state;
     return good + neutral + bad;
   };
 
@@ -50,7 +39,6 @@ export const App = () => {
     return Math.round((good / total) * 100) || 0;
   };
 
-  // const { good, neutral, bad } = this.state;
   const stateNames = Object.keys({ good, neutral, bad });
   const totalFeedback = countTotalFeedback();
   const totalPercentage = countPositiveFeedbackPercentage();
